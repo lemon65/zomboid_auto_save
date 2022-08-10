@@ -14,7 +14,7 @@ All saves are in: 'C:\Users\<CURRENT_USER>\Zomboid\zas_backup_saves\'
 08/09/22 09:46:02 -- Zipping 'fire_man_save', into Archive: 'C:\Users\<CURRENT_USER>\Zomboid\zas_backup_saves\Survivor\1660106762_fire_man_save'
 ```
 
-![alt text](zomboid_auto_save/images/zas_example.png?raw=true "Example using ZAS to save your game")
+![alt text](/images/zas_example.png "Example using ZAS to save your game")
 
 ## How to Install
 Clone the repo and run the python script
