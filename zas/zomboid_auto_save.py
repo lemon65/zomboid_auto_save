@@ -25,7 +25,7 @@ class ZAS():
             print("All saves are in: '%s'" % CONF.BACKUP_SAVE_PATH)
 
     def back_up_saves(self):
-        """ Step the save folders and backup all saves """
+        """ Step the save folders and backups all saves """
         FOLDERS = os.listdir(self.SAVE_PATH)  # Get all the folder names in the saves folder ['Multiplayer', 'Sandbox', 'Survivor']
         for folder_name in FOLDERS:
             base_save_path = self.SAVE_PATH + "\\" + folder_name
@@ -36,12 +36,15 @@ class ZAS():
                 full_backup_path = CONF.BACKUP_SAVE_PATH + "\\" + folder_name + "\\" + zip_name
                 now = datetime.datetime.now()
                 current_time = now.strftime("%m/%d/%y %I:%M:%S")
-                print("%s -- Zipping '%s', into Archive: '%s'" % (current_time, save, full_backup_path))
-                self.zip_folder(full_backup_path, full_save_path)
+                print("%s -- Archiving '%s', into: '%s'" % (current_time, save, full_backup_path))
+                self.archive_saves(full_backup_path, full_save_path)
 
-    def zip_folder(self, path_to_backup, target_save_path):
-        """ Creates a .ZIP of the targeted folder """
-        shutil.make_archive(path_to_backup, 'zip', target_save_path)
+    def archive_saves(self, path_to_backup, target_save_path):
+        """ depending on the settings it will archive the saves as a .ZIP of the targeted folder or just copy the folders """
+        if CONF.COMPRESS_FOLDERS == 0:
+            shutil.make_archive(path_to_backup, 'zip', target_save_path)
+        elif CONF.COMPRESS_FOLDERS == 1:
+            shutil.copytree(target_save_path, path_to_backup)
 
     def _save_poller(self):
         """ Every SAVE_INTERVAL_SEC it will review the folders created and backup your save files """
