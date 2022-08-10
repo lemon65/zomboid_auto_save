@@ -9,4 +9,4 @@ SAVE_INTERVAL_SEC = 300
 BACKUP_SAVE_PATH = os.path.expanduser('~\\Zomboid\\') + "zas_backup_saves"
 
 # Example of Setting a manual save path for the script
-# BACKUP_SAVE_PATH = "C:\Users\aaron\Documents\Game_Saves"
+# BACKUP_SAVE_PATH = "C:\Users\<CURRENT_USER>\Documents\Game_Saves"
