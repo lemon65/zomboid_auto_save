@@ -45,6 +45,8 @@ class ZAS():
             shutil.make_archive(path_to_backup, 'zip', target_save_path)
         elif CONF.COMPRESS_FOLDERS == 1:
             shutil.copytree(target_save_path, path_to_backup)
+        else:
+            raise ValueError("Please check the value for COMPRESS_FOLDERS, it needs to be a [1 or 0]")
 
     def _save_poller(self):
         """ Every SAVE_INTERVAL_SEC it will review the folders created and backup your save files """
@@ -57,6 +59,9 @@ class ZAS():
         except KeyboardInterrupt:
             print("Hope you killed some Zeds my friend!")
             sys.exit(0)
+        except ValueError as e:
+            print("ERROR: %s" % e)
+            sys.exit(1)
 
 zas = ZAS()
 zas._save_poller()
