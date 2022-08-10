@@ -1,7 +1,7 @@
 # Zomboid Auto Save - "ZAS" ![alt text](/images/pz_logo.png "Project Zomboid")
 This is a script that runs along side project zomboid and saves/backup your game as you play. you can change variables in the script_config.py file to change the save location "BACKUP_SAVE_PATH" and interval "SAVE_INTERVAL_SEC"
 
-The script defaults the saves to -- "C:\Users\<CURRENT_USER>\Zomboid\zas_backup_saves\"
+The script defaults the saves to -- "C:\Users\\<CURRENT_USER>\Zomboid\zas_backup_saves\" and the SAVE_INTERVAL_SEC is set to 300sec/5mins before it will save. 
 
 NOTE - The script will auto create the backup folders if they are not present
 
