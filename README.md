@@ -1,5 +1,5 @@
 # Zomboid Auto Save
-This is a script that runs along side project zomboid and saves/backup your game as you play. you can change varables in the script_config.py file to change the save location "BACKUP_SAVE_PATH" and interval "SAVE_INTERVAL_SEC"
+This is a script that runs along side project zomboid and saves/backup your game as you play. you can change variables in the script_config.py file to change the save location "BACKUP_SAVE_PATH" and interval "SAVE_INTERVAL_SEC"
 
 The script defaults the saves to -- "C:\Users\<CURRENT_USER>\Zomboid\zas_backup_saves\"
 
@@ -13,6 +13,8 @@ All saves are in: 'C:\Users\<CURRENT_USER>\Zomboid\zas_backup_saves\'
 08/09/22 09:41:01 -- Zipping 'fire_man_save', into Archive: 'C:\Users\<CURRENT_USER>\Zomboid\zas_backup_saves\Survivor\1660106461_fire_man_save'
 08/09/22 09:46:02 -- Zipping 'fire_man_save', into Archive: 'C:\Users\<CURRENT_USER>\Zomboid\zas_backup_saves\Survivor\1660106762_fire_man_save'
 ```
+
+![alt text](zomboid_auto_save/images/zas_example.png?raw=true "Example using ZAS to save your game")
 
 ## How to Install
 Clone the repo and run the python script
