@@ -17,4 +17,4 @@ COMPRESS_FOLDERS = 0
 
 # this determines how many save files are kept on your disc. Newest one will override oldest one. 
 # Only works when COMPRESS_FOLDERS = 0
-MAX_BACKUPS = 10
+MAX_BACKUPS = 5

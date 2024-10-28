@@ -4,7 +4,21 @@ import sys
 import time
 import shutil
 import datetime
-import script_config as CONF
+
+def get_config_path():
+    """Get path to config file whether running as script or exe"""
+    if getattr(sys, 'frozen', False):
+        # Running as exe
+        return os.path.join(os.path.dirname(sys.executable), 'script_config.py')
+    else:
+        # Running as script
+        return os.path.join(os.path.dirname(__file__), 'script_config.py')
+
+import importlib.util
+config_path = get_config_path()
+spec = importlib.util.spec_from_file_location("script_config", config_path)
+CONF = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(CONF)
 
 class ZAS():
     "This is a class that run the Zomboid Auto Save system"
@@ -50,7 +64,7 @@ class ZAS():
                     full_backup_path = os.path.join(backup_dir,zip_name) # store saved zip file in respective game save folder
                     now = datetime.datetime.now()
                     current_time = now.strftime("%m/%d/%y %I:%M:%S")
-                    print("%s -- Changes detected, archiving '%s', into: '%s'" % (current_time, save, full_backup_path))
+                    print("%s archiving '%s', into: '%s'" % (current_time, save, backup_dir))
                     self.archive_saves(full_backup_path, full_save_path)
                 else:
                     print(f"No changes detected in {save}")
@@ -100,5 +114,3 @@ class ZAS():
                     
 zas = ZAS()
 zas._save_poller()
-
-
