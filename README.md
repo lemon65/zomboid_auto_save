@@ -6,7 +6,9 @@ This is a script that runs along side project zomboid and saves/backup your game
 * COMPRESS_FOLDERS == defaults to 0, to .ZIP the saves to save on space.
 * MAX_SAVES == defaults to 10, The total amount of saves you can have saved, it will start removing the oldest after it hits this limit.
 
-NOTE - The script will auto create the backup folders if they are not present
+NOTEs About Running:
+- The script will auto create the backup folders if they are not present
+- Don't leave the script running or it can overwrite all your backups with the same save data (5mins - 10saves == 50min time frame)
 
 ### Usage:
 ```
@@ -24,7 +26,7 @@ Hope you killed some Zeds my friend!
 * Unzip the file, using - https://www.7-zip.org/
 * Remove the Epoch time at the front of the folder name.
     * "/1737956008_2025-01-20_11-41-01" >> "/2025-01-20_11-41-01"
-* Overwrite the old save folder with the backup copy
+* Overwrite the old save folder with the backup save in - 'C:\Users\CURRENT_USER\Zomboid\Saves'
 * Launch the game and enjoy
 
 ## Screenshot of ZAS
