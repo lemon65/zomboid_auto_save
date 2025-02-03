@@ -14,3 +14,6 @@ BACKUP_SAVE_PATH = os.path.expanduser('~\\Zomboid\\') + "zas_backup_saves"
 # This Setting will configure the script to .ZIP and compress the saves or to just copy the folders
 # 0 == .ZIP the folder, 1 = Just copy the folder 
 COMPRESS_FOLDERS = 0
+
+# This is the max amount of saves that will be backed up by the system
+MAX_SAVES = 10

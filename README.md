@@ -1,21 +1,30 @@
 # Zomboid Auto Save - "ZAS" ![alt text](/images/pz_logo.png "Project Zomboid")
-This is a script that runs along side project zomboid and saves/backup your game as you play. you can change variables in the script_config.py file to change the save location "BACKUP_SAVE_PATH" and interval "SAVE_INTERVAL_SEC"
+This is a script that runs along side project zomboid and saves/backup your game as you play. you can change variables in the script_config.py file to change the save location "BACKUP_SAVE_PATH" and interval "SAVE_INTERVAL_SEC" as well as the total maximum amount of saves "MAX_SAVES" you want to keep at one time.
 
 * BACKUP_SAVE_PATH == defaults the saves to -- "C:\Users\\<CURRENT_USER>\Zomboid\zas_backup_saves\"
 * SAVE_INTERVAL_SEC == defaults to 300sec/5mins before it will save.
 * COMPRESS_FOLDERS == defaults to 0, to .ZIP the saves to save on space.
+* MAX_SAVES == defaults to 10, The total amount of saves you can have saved, it will start removing the oldest after it hits this limit.
 
 NOTE - The script will auto create the backup folders if they are not present
 
 ### Usage:
 ```
 $ py zomboid_auto_save.py
-All saves are in: 'C:\Users\aaron\Zomboid\zas_backup_saves'
-08/10/22 01:05:30 -- Archiving 'fire_man_save', into: 'C:\Users\aaron\Zomboid\zas_backup_saves\Survivor\1660118730_fire_man_save'
-08/10/22 01:05:35 -- Archiving 'fire_man_save', into: 'C:\Users\aaron\Zomboid\zas_backup_saves\Survivor\1660118741_fire_man_save'
-08/10/22 01:05:40 -- Archiving 'fire_man_save', into: 'C:\Users\aaron\Zomboid\zas_backup_saves\Survivor\1660119052_fire_man_save'
+Configured for Max Saves of: 10
+All saves are in: 'C:\Users\CURRENT_USER\Zomboid\zas_backup_saves'
+02/02/25 10:22:56 -- Archiving '2025-01-20_11-41-01', into: 'C:\Users\CURRENT_USER\Zomboid\zas_backup_saves\Sandbox\1738563776_2025-01-20_11-41-01'
+MaxSaves = 10, Removing the oldest save file: 1737956008_2025-01-20_11-41-01.zip
 Hope you killed some Zeds my friend!
 ```
+
+### Restore a Save:
+* Turn off the game
+* Go into your configured backup save folder - 'C:\Users\CURRENT_USER\Zomboid\zas_backup_saves'
+* Unzip the file, using - https://www.7-zip.org/
+* Remove the Epoch time at the front of the file name.
+    * "1737956008_2025-01-20_11-41-01" >> "2025-01-20_11-41-01"
+* Launch the game and enjoy
 
 ## Screenshot of ZAS
 ![alt text](/images/zas_example.png "Example using ZAS to save your game")
