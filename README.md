@@ -22,8 +22,9 @@ Hope you killed some Zeds my friend!
 * Turn off the game
 * Go into your configured backup save folder - 'C:\Users\CURRENT_USER\Zomboid\zas_backup_saves'
 * Unzip the file, using - https://www.7-zip.org/
-* Remove the Epoch time at the front of the file name.
-    * "1737956008_2025-01-20_11-41-01" >> "2025-01-20_11-41-01"
+* Remove the Epoch time at the front of the folder name.
+    * "/1737956008_2025-01-20_11-41-01" >> "/2025-01-20_11-41-01"
+* Overwrite the old save folder with the backup copy
 * Launch the game and enjoy
 
 ## Screenshot of ZAS
